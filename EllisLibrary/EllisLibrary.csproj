@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{630DB1F6-A974-4482-8164-830ED9C773A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EllisLibrary</RootNamespace>
+    <AssemblyName>EllisLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mark.Tidy, Version=1.0.0.1244, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Mark.Tidy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blend\Ellis\ArtifactManager.cs" />
+    <Compile Include="Blend\Ellis\Config.cs" />
+    <Compile Include="Blend\Ellis\ExportFile.cs" />
+    <Compile Include="Blend\Ellis\FilterChain.cs" />
+    <Compile Include="Blend\Ellis\Filters\ConvertRelativeUrls.cs" />
+    <Compile Include="Blend\Ellis\Filters\DownloadAssets.cs" />
+    <Compile Include="Blend\Ellis\Filters\FilterBase.cs" />
+    <Compile Include="Blend\Ellis\Filters\HtmlTidy.cs" />
+    <Compile Include="Blend\Ellis\Filters\Inflate.cs" />
+    <Compile Include="Blend\Ellis\Filters\RemoveAfterLast.cs" />
+    <Compile Include="Blend\Ellis\Filters\RemoveAttribute.cs" />
+    <Compile Include="Blend\Ellis\Filters\RemoveClasses.cs" />
+    <Compile Include="Blend\Ellis\Filters\RemoveDomainFromPaths.cs" />
+    <Compile Include="Blend\Ellis\Filters\RemoveElement.cs" />
+    <Compile Include="Blend\Ellis\Filters\RemoveEmptyElement.cs" />
+    <Compile Include="Blend\Ellis\Filters\Replace.cs" />
+    <Compile Include="Blend\Ellis\Filters\SetAttribute.cs" />
+    <Compile Include="Blend\Ellis\Filters\StripComments.cs" />
+    <Compile Include="Blend\Ellis\Filters\StripTags.cs" />
+    <Compile Include="Blend\Ellis\Filters\SwapTags.cs" />
+    <Compile Include="Blend\Ellis\Filters\Trim.cs" />
+    <Compile Include="Blend\Ellis\HtmlNodeExtensions.cs" />
+    <Compile Include="Blend\Ellis\Job.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\DownloadedAssetReport.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\EmptyPartsReport.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\FailedExtractionReport.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\HtmlManifest.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\HtmlViewer.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\JobOutputBase.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\MetaTable.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\SingleXmlFile.cs" />
+    <Compile Include="Blend\Ellis\JobOutputs\Sql.cs" />
+    <Compile Include="Blend\Ellis\Log.cs" />
+    <Compile Include="Blend\Ellis\Message.cs" />
+    <Compile Include="Blend\Ellis\Page.cs" />
+    <Compile Include="Blend\Ellis\PageOutputs\HtmlViewerPage.cs" />
+    <Compile Include="Blend\Ellis\PageOutputs\IPageOutput.cs" />
+    <Compile Include="Blend\Ellis\PagePart.cs" />
+    <Compile Include="Blend\Ellis\ParseProfile.cs" />
+    <Compile Include="Blend\Ellis\ParseTarget.cs" />
+    <Compile Include="Blend\Ellis\Reports\PlainTextReport.cs" />
+    <Compile Include="Blend\Ellis\Reports\ReportBase.cs" />
+    <Compile Include="Blend\Ellis\SettingsIndex.cs" />
+    <Compile Include="Blend\Ellis\StandardMessageTypes.cs" />
+    <Compile Include="Blend\Ellis\Utils.cs" />
+    <Compile Include="Blend\ObjectExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HtmlAgilityPack.dll" />
+    <Content Include="libtidy.dll" />
+    <Content Include="log4net.dll" />
+    <Content Include="Mark.Tidy.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
